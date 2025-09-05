@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" x-data="{ sidebarOpen: false }">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bandung Swapping Stations</title>
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --main-bg: #ffffff;
+      --topbar-bg: #72CAF3;
+      --search-bg: #b9e0fa;
+      --hamburger-color: #f3f3f0;
+      --card-bg: #72CAF3;
+      --card-text: #000000;
+      --card-btn: #ffffff;
+      --font-main: 'Plus Jakarta Sans', sans-serif;
+      --title-size: 2rem;
+      --desc-size: 1.1rem;
+      --station-size: 1rem;
+      --choose-size: 1rem;
+    }
+    @font-face {
+      font-family: 'Plus Jakarta Sans';
+      src: url('PlusJakartaSans-VariableFont_wght.ttf') format('truetype');
+      font-weight: 100 900;
+      font-display: swap;
+    }
+    body {
+      font-family: var(--font-main);
+      background: var(--main-bg);
+    }
+    .topbar {
+      background: var(--topbar-bg);
+    }
+    .searchbar {
+      background: var(--search-bg);
+    }
+    .hamburger-bar {
+      background: var(--hamburger-color);
+    }
+    .main-title {
+      font-family: var(--font-main);
+      font-size: var(--title-size);
+      color: var(--card-text);
+      font-weight: 500;
+    }
+    .main-desc {
+      font-size: var(--desc-size);
+      color: var(--card-text);
+    }
+    .station-card {
+      background: var(--card-bg);
+      color: var(--card-text);
+      font-size: var(--station-size);
+    }
+    .choose-btn {
+      color: var(--card-btn);
+      font-size: var(--choose-size);
+    }
+  </style>
+</head>
+<body class="min-h-screen">
+  <div class="flex flex-col min-h-screen">
+    <!-- Top Bar -->
+    <div class="topbar px-6 py-4 flex items-center justify-between">
+      <!-- Hamburger -->
+      <button @click="sidebarOpen = !sidebarOpen" class="focus:outline-none">
+        <div class="space-y-1">
+          <span class="block w-8 h-1 rounded hamburger-bar"></span>
+          <span class="block w-8 h-1 rounded hamburger-bar"></span>
+          <span class="block w-8 h-1 rounded hamburger-bar"></span>
+        </div>
+      </button>
+      <!-- Search Bar -->
+      <div class="flex items-center searchbar rounded-full px-2 py-0.95 w-32">
+        <svg class="w-5 h-5 text-gray-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 104.5 4.5a7.5 7.5 0 0012.15 12.15z" />
+        </svg>
+        <input type="text" class="bg-transparent outline-none w-full text-gray-700" />
+      </div>
+      <div></div>
+    </div>
+    <!-- Main Content -->
+    <main class="flex-1" style="background: var(--main-bg);">
+      <img src="GedSate.jpeg" alt="Bandung" class="w-full h-56 object-cover" style="object-position: 50% 70%;" />
+      <div class="px-8 py-6">
+        <h1 class="main-title mb-2">Bandung</h1>
+        <p class="main-desc mb-8">9 Swapping Stations</p>
+        <div class="space-y-6">
+          <div class="station-card rounded-2xl px-6 py-5 flex flex-col md:flex-row md:items-center md:justify-between">
+            <span class="font-medium">Swap Station | JV Braga</span>
+            <span class="choose-btn mt-2 md:mt-0 md:text-right">Choose this station</span>
+          </div>
+          <div class="station-card rounded-2xl px-6 py-5 flex flex-col md:flex-row md:items-center md:justify-between">
+            <span class="font-medium">Swap Station | JV Asia Afrika</span>
+            <span class="choose-btn mt-2 md:mt-0 md:text-right">Choose this station</span>
+          </div>
+          <div class="station-card rounded-2xl px-6 py-5 flex flex-col md:flex-row md:items-center md:justify-between">
+            <span class="font-medium">Swap Station | JV Lembang</span>
+            <span class="choose-btn mt-2 md:mt-0 md:text-right">Choose this station</span>
+          </div>
+          <div class="station-card rounded-2xl px-6 py-5 flex flex-col md:flex-row md:items-center md:justify-between">
+            <span class="font-medium">Swap Station | JV Setiabudi</span>
+            <span class="choose-btn mt-2 md:mt-0 md:text-right">Choose this station</span>
+          </div>
+          <div class="station-card rounded-2xl px-6 py-5 flex flex-col md:flex-row md:items-center md:justify-between">
+            <span class="font-medium">Swap Station | JV Ganesha</span>
+            <span class="choose-btn mt-2 md:mt-0 md:text-right">Choose this station</span>
+          </div>
+          <div class="station-card rounded-2xl px-6 py-5 flex flex-col md:flex-row md:items-center md:justify-between">
+            <span class="font-medium">Swap Station | JV Dago</span>
+            <span class="choose-btn mt-2 md:mt-0 md:text-right">Choose this station</span>
+          </div>
+          <div class="station-card rounded-2xl px-6 py-5 flex flex-col md:flex-row md:items-center md:justify-between">
+            <span class="font-medium">Swap Station | JV Pasteur</span>
+            <span class="choose-btn mt-2 md:mt-0 md:text-right">Choose this station</span>
+          </div>
+          <div class="station-card rounded-2xl px-6 py-5 flex flex-col md:flex-row md:items-center md:justify-between">
+            <span class="font-medium">Swap Station | JV Cihampelas</span>
+            <span class="choose-btn mt-2 md:mt-0 md:text-right">Choose this station</span>
+          </div>
+          <div class="station-card rounded-2xl px-6 py-5 flex flex-col md:flex-row md:items-center md:justify-between">
+            <span class="font-medium">Swap Station | JV Ahmad Yani</span>
+            <span class="choose-btn mt-2 md:mt-0 md:text-right">Choose this station</span>
+          </div>
+    </main>
+  </div>
+</body>
+</html>
